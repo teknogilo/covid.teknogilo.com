@@ -7,7 +7,7 @@ export default function Custom404() {
         <div>
             <Head>
                 <title>404 Not Found</title>
-                <link rel="shortcut icon" href="favicon.png" type="image/png"/>
+                <link rel="shortcut icon" href="images/svg/virus.svg" type="image/svg+xml"/>
                 <script src="https://kit.fontawesome.com/850b50a31b.js" rel="stylesheet"/>
             </Head>
             <div className="flex bg-three min-w-full min-h-screen justify-center items-center">

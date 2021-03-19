@@ -6,12 +6,12 @@ export default function Layout (props) {
     return (
         <div>
             <Head>
-                <title>{props.title} - Teknogilo</title>
+                <title>{props.title} - Corona Tracker</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
 
                 <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet"/>
-                <link rel="shortcut icon" href="favicon.png" type="image/png"/>
+                <link rel="shortcut icon" href="images/svg/virus.svg" type="image/svg+xml"/>
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary" key="twcard" />
