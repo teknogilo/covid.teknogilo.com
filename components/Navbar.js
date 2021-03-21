@@ -17,7 +17,6 @@ export default function Navbar() {
             setNavBackground(false)
         }
     }
-    
     return (
         <div>
             <nav className={`fixed w-full z-10 top-0 py-2 border-b ${navBackground ? "bg-transparent text-black" : "bg-white text-black"} ${click ? "shadow" : ""} `}>
@@ -39,6 +38,9 @@ export default function Navbar() {
                         </Link>
                         <Link href="/track">
                             <a className="p-2 lg:px-4 md:mx-2 rounded hover:bg-one hover:text-white transition-colors duration-300">Track</a>
+                        </Link>
+                        <Link href="/lookup">
+                            <a className="p-2 lg:px-4 md:mx-2 rounded hover:bg-one hover:text-white transition-colors duration-300">Lookup</a>
                         </Link>
                         <Link href="/about">
                             <a className="p-2 lg:px-4 md:mx-2 rounded hover:bg-one hover:text-white transition-colors duration-300">About</a>

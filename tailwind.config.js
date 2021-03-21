@@ -8,6 +8,8 @@ module.exports = {
       two:    '#5D5C8E',
       three:  '#F0EDFF',
       four:   '#00C893',
+      red:    '#00B0FF',
+      blue:   '#FF5C2F',
       },
     },
   },
