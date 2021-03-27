@@ -1,7 +1,7 @@
 import Chart from '../home/Chart'
 import { useState , useEffect } from 'react'
 
-import { fetchAllData, fetchHistoricalData } from '../../lib/data'
+import { fetchAllData } from '../../lib/data'
 
 export default function Stats() {
 
@@ -12,40 +12,17 @@ export default function Stats() {
         updated: 0
     })
 
-    const [dailyData, setDailyData] = useState({
-        cases : [],
-        deaths : [],
-        recovered : [],
-        date : [],
-    })
-
     useEffect(() => {
         const fetchData = async () => {
             setData(await fetchAllData())
         }
         fetchData()
-
-        const fetchHistoryData = async () => {
-            const response = await fetchHistoricalData()
-            Object.values(response.cases).map((value) => {
-                setDailyData({
-                    cases :  [...dailyData.cases, value]
-                })
-            })
-            // setDailyData({
-            //     cases :  [...dailyData.cases, Object.values(response.cases)],
-            //     deaths : [...dailyData.deaths, Object.values(response.deaths)],
-            //     recovered : [...dailyData.recovered, Object.values(response.recovered)],
-            //     date : [...dailyData.date, Object.keys(response.cases)],
-            // })
-        }
-        fetchHistoryData()
-    },[])
-    console.log(dailyData)
+        
+    })
     return (
         <div>
             <div id="home">
-                <div className="bg-white py-4">
+                <div className="bg-white pt-8">
                     <div className="container px-4 mx-auto md:flex md:items-center md:w-4/5 w-auto">
                         <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-2 mx-auto mb-18 text-white w-full">
                             <div className="bg-four overflow-hidden rounded shadow m-2">

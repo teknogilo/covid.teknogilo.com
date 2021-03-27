@@ -23,7 +23,7 @@ export default function Navbar() {
                 <div className="container px-4 mx-auto md:flex md:items-center md:w-4/5 w-auto">
 
                     <div className="flex justify-between p-2 items-center">
-                        <div class="flex items-center">
+                        <div className="flex items-center">
                             <Image src="/images/svg/virus.svg" alt="Corona Virus" width={35} height={35} />
                             <a className={`font-bold text-3xl ml-2 text-white1 ${navBackground ? "text-one" : "text-four"}`}>CTR</a>
                         </div>
@@ -36,11 +36,11 @@ export default function Navbar() {
                         <Link href="/">
                             <a className="p-2 lg:px-4 md:mx-2 rounded hover:bg-one hover:text-white transition-colors duration-300">Home</a>
                         </Link>
-                        <Link href="/track">
-                            <a className="p-2 lg:px-4 md:mx-2 rounded hover:bg-one hover:text-white transition-colors duration-300">Track</a>
+                        <Link href="/map">
+                            <a className="p-2 lg:px-4 md:mx-2 rounded hover:bg-one hover:text-white transition-colors duration-300">Map</a>
                         </Link>
-                        <Link href="/lookup">
-                            <a className="p-2 lg:px-4 md:mx-2 rounded hover:bg-one hover:text-white transition-colors duration-300">Lookup</a>
+                        <Link href="/line">
+                            <a className="p-2 lg:px-4 md:mx-2 rounded hover:bg-one hover:text-white transition-colors duration-300">Line</a>
                         </Link>
                         <Link href="/about">
                             <a className="p-2 lg:px-4 md:mx-2 rounded hover:bg-one hover:text-white transition-colors duration-300">About</a>

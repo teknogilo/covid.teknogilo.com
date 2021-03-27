@@ -9,8 +9,8 @@ export default function Main() {
                     <div className="container px-4 mx-auto md:flex md:items-center md:w-4/5 w-auto mt-8">
                         <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-6 mx-auto">
                             <div className="text-center md:text-left my-auto">
-                                <h1 className="text-6xl font-medium text-four">Stay <span class="text-one font-bold">Home</span></h1>
-                                <h1 className="text-6xl font-medium text-one font-bold">Stay <span class="text-four">Safe</span></h1>
+                                <h1 className="text-6xl font-medium text-four">Stay <span className="text-one font-bold">Home</span></h1>
+                                <h1 className="text-6xl font-medium text-one font-bold">Stay <span className="text-four">Safe</span></h1>
                                 <p className="text-md font-medium py-10">
                                     Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
                                 </p>
