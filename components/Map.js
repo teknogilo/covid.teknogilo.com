@@ -6,10 +6,10 @@ const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 const Mapped = () => {
     
         const token = "pk.eyJ1IjoiemVraG9pIiwiYSI6ImNrbWc5aGRwejBqZzUycHBrYXMyYTUxZDEifQ.h_RMJX6siNjMUI5z0FKCMg"
+        mapboxgl.accessToken = token
     
         const [pageIsMounted, setPageIsMounted] = useState(false)
         const [countryData, setCountryData] = useState([])
-        mapboxgl.accessToken = token
     
         useEffect(() => {
             const fetchDataLocations = async () => {
@@ -24,7 +24,7 @@ const Mapped = () => {
             });
             countryData.map(country => {
                 // create the popup
-                let popup = new mapboxgl.Popup().setHTML(`<div class="flex flex-row"><div class="flex-auto"> <a><i class="lni lni-heart-filled text-four mx-1"></i>${country.cases.toLocaleString()}</a></div><div class="flex-auto"> <a><i class="lni lni-heart-filled text-blue mx-1"></i>${country.deaths.toLocaleString()}</a></div><div class="flex-auto"> <a><i class="lni lni-heart-filled text-red mx-1"></i>${country.recovered.toLocaleString()}</a></div></div><div class="flex flex-row"><div class="flex-auto text-center">Updated : ${country.updated.toLocaleString()}</div></div>`);
+                let popup = new mapboxgl.Popup().setHTML(`<div class="flex flex-row"><div class="flex-auto font-xl font-bold text-center"><img class="w-full border" src=${country.flag} alt=${country.country}> ${country.country}</div></div><div class="flex flex-row"><div class="flex-auto"> <a><i class="lni lni-heart-filled text-four mx-1 font-medium"></i>${country.cases.toLocaleString()}</a></div><div class="flex-auto"> <a><i class="lni lni-heart-filled text-blue mx-1 font-medium"></i>${country.deaths.toLocaleString()}</a></div><div class="flex-auto"> <a><i class="lni lni-heart-filled text-red mx-1 font-medium"></i>${country.recovered.toLocaleString()}</a></div></div><div class="flex flex-row"><div class="flex-auto text-center font-medium">Updated : ${(new Date(country.updated)).toDateString()}</div></div>`);
                 // create DOM element for the marker
                 let el = document.createElement("div");
                 el.id = "marker";
@@ -36,13 +36,13 @@ const Mapped = () => {
                 .setPopup(popup) // sets a popup on this marker
                 .addTo(map);
             })
-        })
+        },[])
             
     return (
         <div>
             <div>
                 <Link href="/">
-                    <button className="fixed bg-black bg-opacity-20 text-white p-3 flex left-5 top-5 z-50 focus:outline-none"><i className="lni lni-chevron-left"></i></button>
+                    <button className="fixed bg-black bg-opacity-50 text-white p-3 flex left-5 top-5 z-50 focus:outline-none"><i className="lni lni-chevron-left"></i></button>
                 </Link>
                 <div className="min-w-full min-h-screen focus:outline-none" id="map">
                 </div>

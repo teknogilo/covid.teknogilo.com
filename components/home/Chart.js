@@ -53,6 +53,9 @@ const LineChart = () => {
         {
           ticks: {
             beginAtZero: true,
+            callback: function(value, index, values) {
+                        return value.toLocaleString();
+            }
           },
         },
       ],
@@ -64,7 +67,7 @@ const LineChart = () => {
     <div>
       <div className="bg-white py-4">
       
-          <div className="container px-4 mx-auto md:flex md:items-center md:w-4/5 w-auto mt-8">
+          <div className="container px-4 mx-auto flex items-center md:w-4/5 w-auto mt-8">
             <Line data={data} options={options} />
           </div>
       </div>
