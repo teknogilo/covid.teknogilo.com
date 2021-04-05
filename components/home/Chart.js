@@ -18,7 +18,7 @@ const LineChart = () => {
     }
     fetchHistoryData()
     
-    })
+    },[])
 
   const data = {
     labels: dailyData.dates,

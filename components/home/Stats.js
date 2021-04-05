@@ -18,7 +18,7 @@ export default function Stats() {
         }
         fetchData()
         
-    })
+    },[])
     return (
         <div>
             <div id="home">
