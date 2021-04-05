@@ -22,7 +22,7 @@ const Mapped = () => {
             const fetchDataLocations = async () => {
                 const data = await fetchLocations()
                 data.forEach(countries => {
-                    const { country, flag, cases, deaths, recovered, coordinate } = countries;
+                    const { country, updated, flag, cases, deaths, recovered, coordinate } = countries;
                     // create the popup
                     const popup = new mapboxgl.Popup().setHTML(`<div class="flex flex-row"><div class="flex-auto font-xl font-bold text-center"><img class="w-full border" src=${flag} alt=${country}> ${country}</div></div><div class="flex flex-row"><div class="flex-auto"> <a><i class="lni lni-heart-filled text-four mx-1 font-medium"></i>${cases.toLocaleString()}</a></div><div class="flex-auto"> <a><i class="lni lni-heart-filled text-blue mx-1 font-medium"></i>${deaths.toLocaleString()}</a></div><div class="flex-auto"> <a><i class="lni lni-heart-filled text-red mx-1 font-medium"></i>${recovered.toLocaleString()}</a></div></div><div class="flex flex-row"><div class="flex-auto text-center font-medium">Updated : ${(new Date(updated)).toDateString()}</div></div>`);
                     // create DOM element for the marker
